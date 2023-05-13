@@ -1,0 +1,19 @@
+﻿@model TravelPlanner.Models.ReviewAccommodation
+
+<h2>Leave a Review for Accommodation @ViewBag.AccommodationId</h2>
+<div>
+    <form method="post" action="@Url.Action("CreateReview", "ReviewAccommodation")">
+        <label for="rating">Rating:</label>
+        <select id="rating" name="Rating" required>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+        <br>
+        <label for="Comment">Comment:</label>
+        <input type="text" id="comment" name="Comment" required />
+        <br>
+        <button type="submit">Add Review</button>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+﻿@model List<TravelPlanner.Models.ReviewAccommodation>
+
+<h2>Reviews for Accommodation @ViewBag.AccommodationId</h2>
+
+<div>
+    @Html.ActionLink("Leave a Review", "LeaveReview", new { id = ViewBag.AccommodationId })
+</div>
+
+@foreach (var review in Model)
+{
+    <div>
+          @Session["firstname"]
+        <p>Rating: @review.Rating</p>
+        <p>Comment: @review.Comment</p>
+        <p>Created At: @review.CreatedAt</p>
+    </div>
+}
+
